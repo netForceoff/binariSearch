@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    let array = ['22', '11', '9', '130', '25', '90', '100'];
+    array.sort(function(a, b) {
+      return a - b;
+    });
+
+    function BinarySearch(t,array) {
+      var i = 0, j = array.length, k;
+      while (i < j){
+        k = Math.floor((i+j)/2);
+        if (t <= array[k]) j = k;
+        else i = k+1;
+    }
+      if (array[i] === t) return i;     // На выходе индекс искомого элемента.
+      else return -1;                 // Если искомого элемента нет в массиве, то -1.
+}
+
+    console.log(array);
+    console.log(BinarySearch('25', array));
+//Поиск элемента в отсортированном массиве.
+//Бинарный поиск (binary search) представляет собой в высшей степени эффективный алгоритм для поиска в отсортированном массиве.
+//Он работает путем сравнения искомого ключа t со средним элементом массива A[k].
+//Если они равны, алгоритм прекращает работу.
+//В противном случае та же операция рекурсивно повторяется для первой половины массива, если t > A[k], и для второй, если t < A[k].
+    </script>
+  </body>
+</html>
